@@ -1,0 +1,11 @@
+build/
+dist/
+node_modules/
+.snapshots/
+*.min.js
+lib/
+public/
+/.*rc
+/*.json
+/*.ts
+/*.lock
