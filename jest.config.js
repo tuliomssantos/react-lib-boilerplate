@@ -5,7 +5,7 @@ module.exports = {
   },
 
   transform: {
-    '.(ts|tsx)': 'ts-jest',
+    '^.+\\.(t|j)sx?$': ['@swc/jest'],
   },
 
   testRegex: '(/__tests__/.*|(\\.|/)(test|spec))\\.(tsx|ts|js)?$',

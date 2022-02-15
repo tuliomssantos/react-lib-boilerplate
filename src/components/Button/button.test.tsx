@@ -1,4 +1,5 @@
 import { renderAdapter } from '../../utils/test-helpers'
+
 import Button from '.'
 
 describe('<Button />', () => {
