@@ -12,13 +12,13 @@
   "license": "MIT",
   "scripts": {
     "build": "rollup -c",
-    "build-storybook": "build-storybook",
     "commit": "git-cz",
     "lint": "eslint src --max-warnings=0",
     "lint:fix": "eslint src --fix",
     "prepare": "husky install",
     "release": "standard-version",
     "storybook": "start-storybook -p 6006",
+    "storybook-build": "build-storybook",
     "test": "jest src"
   },
   "devDependencies": {
