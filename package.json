@@ -19,7 +19,8 @@
     "release": "standard-version",
     "storybook": "start-storybook -p 6006",
     "storybook-build": "build-storybook",
-    "test": "jest src"
+    "test": "jest src",
+    "chromatic": "chromatic --exit-zero-on-changes"
   },
   "devDependencies": {
     "@commitlint/cli": "^16.2.1",
@@ -40,6 +41,7 @@
     "@types/react": "^17.0.39",
     "@typescript-eslint/eslint-plugin": "^5.12.0",
     "@typescript-eslint/parser": "^5.12.0",
+    "chromatic": "^6.4.3",
     "commitizen": "^4.2.4",
     "cz-conventional-changelog": "3.3.0",
     "eslint": "^8.9.0",
