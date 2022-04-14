@@ -12,3 +12,27 @@ $ build-storybook # Build Storybook as a static web application 📕
 $ test # Execute unit tests 🎯
 ```
 
+## Development workflow with Yalc
+
+Yalc provides "Better workflow than npm | yarn link for package authors".
+
+Install globaly
+
+```bash
+$ yarn global add yalc
+```
+
+Publish
+```bash
+$ yalc publish
+```
+
+**Link** to your project
+```bash
+$ yalc link <my-package>
+```
+
+After making changes, to update your lib in other packages, run:
+```bash
+$ yalc push
+```
