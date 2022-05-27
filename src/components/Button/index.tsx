@@ -1,41 +1,46 @@
-import React from 'react'
+import clsx from 'clsx'
+import { forwardRef } from 'react'
 
-import './styles.css'
+import styles from './styles.module.scss'
 
-export interface ButtonProps {
-  primary?: boolean
-
+export interface ButtonProps extends React.ComponentProps<'button'> {
   backgroundColor?: string
-
+  children: React.ReactNode
   size?: 'small' | 'medium' | 'large'
-
-  label: string
-
-  onClick?: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void
+  variant?: 'primary' | 'secondary'
 }
 
-const Button = ({
-  primary = true,
-  backgroundColor,
-  size = 'medium',
-  onClick,
-  label,
-}: ButtonProps) => {
-  const mode = primary
-    ? 'storybook-button--primary'
-    : 'storybook-button--secondary'
-  return (
-    <button
-      type="button"
-      className={['storybook-button', `storybook-button--${size}`, mode].join(
-        ' '
-      )}
-      style={backgroundColor ? { backgroundColor } : {}}
-      onClick={onClick}
-    >
-      {label}
-    </button>
-  )
-}
+const Button = forwardRef<HTMLButtonElement, ButtonProps>(
+  (
+    {
+      backgroundColor = '',
+      children,
+      className,
+      size = 'medium',
+      variant = 'primary',
+      ...rest
+    },
+    ref
+  ) => {
+    return (
+      <button
+        {...rest}
+        ref={ref}
+        type="button"
+        className={clsx([
+          styles.btn,
+          styles[`btn__${variant}`],
+          styles[`btn__${size}`],
+          className,
+        ])}
+        style={{ backgroundColor }}
+      >
+        {children}
+      </button>
+    )
+  }
+)
+
+Button.displayName = 'Button'
 
 export default Button

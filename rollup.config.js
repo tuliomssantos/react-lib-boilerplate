@@ -4,7 +4,8 @@ import generateDeclarations from 'rollup-plugin-generate-declarations'
 import peerDepsExternal from 'rollup-plugin-peer-deps-external'
 import postcss from 'rollup-plugin-postcss'
 import resolve from '@rollup/plugin-node-resolve'
-import typescript from '@rollup/plugin-typescript'
+import esbuild from 'rollup-plugin-esbuild-transform'
+import path from 'path'
 
 import pkg from './package.json'
 
@@ -26,15 +27,31 @@ export default {
     cleaner({
       targets: ['./lib'],
     }),
-    generateDeclarations(),
     peerDepsExternal(),
+    generateDeclarations(),
     resolve(),
     commonjs(),
-    typescript({
-      exclude: ['**/*.stories.tsx', '**/*.test.tsx'],
-    }),
+    esbuild([
+      {
+        loader: 'json',
+      },
+      {
+        loader: 'tsx',
+        banner: "import React from 'react'",
+      },
+      {
+        loader: 'ts',
+        include: /\.tsx?$/,
+        tsconfig: path.join(__dirname, 'tsconfig.json'),
+      },
+      {
+        output: true,
+        minify: true,
+        target: 'es2015',
+      },
+    ]),
     postcss({
-      extensions: ['.css'],
+      modules: true,
     }),
   ],
 }

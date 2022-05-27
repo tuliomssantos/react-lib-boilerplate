@@ -2,7 +2,7 @@
 
 exports[`<Button /> should render correctly 1`] = `
 <button
-  class="storybook-button storybook-button--medium storybook-button--primary"
+  class="btn btn__primary btn__medium"
   type="button"
 >
   Simple button
