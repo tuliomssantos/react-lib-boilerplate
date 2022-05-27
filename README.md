@@ -1,38 +1,40 @@
-# React Library Boilerplate :watch:
+# React Components Library
 
-Use to save time building React component libraries.
+<!-- To-do: Add description -->
 
-🔧 Available commands
+## ✔️ Plugins used in this project
+
+<br>
+
+- <span style="font-size: 20px;">⚛ </span>**ReactJS** — Application developed with ReactJS;
+- ⚡️ **Esbuild** — Extremely fast JavaScript bundler
+- ⌨️ **Typescript** — Javascript Superset
+- 📏 **ESLint** — javascript lint
+- 💖 **Prettier** - Opinionated code formatter
+- 🐶 **Husky** — Using git hooks with ease
+- 🚓 **Commitlint** - Lint commit messages
+- 🚫 **lint-staged** - Runs lints for staged files
+- 🗂 **Absolute import** - Import files and folders directly from src
+  <br>
+  <br>
+
+---
+
+<br>
+
+## 🧶 Available commands
+
+<br>
+
 ```bash
-$ build # Run the application blundle using the Rollup configuration file 🚀
-$ commit # Helper to write conventional commits 🐶
-$ release # Generates a new release with standard-version 🐗
-$ storybook # Runs Storybook in development mode 📗
-$ build-storybook # Build Storybook as a static web application 📕
-$ test # Execute unit tests 🎯
+$ build # Generate the production build
+$ commit # Start commit following conventional-commits pattern
+$ lint # Run eslint to check code error patterns
+$ lint:fix # Run eslint and fix resolvable issues
+$ prepare # Husky setup
+$ sb # Run storybook locally
+$ sb:build # Generate the static storybook build
+$ test # Run the unit tests
 ```
 
-## Development workflow with Yalc
-
-Yalc provides "Better workflow than npm | yarn link for package authors".
-
-Install globaly
-
-```bash
-$ yarn global add yalc
-```
-
-Publish
-```bash
-$ yalc publish
-```
-
-**Link** to your project
-```bash
-$ yalc link <my-package>
-```
-
-After making changes, to update your lib in other packages, run:
-```bash
-$ yalc push
-```
+<br>
