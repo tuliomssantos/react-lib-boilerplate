@@ -2,11 +2,11 @@ import React from 'react'
 
 import { renderAdapter } from '../../utils/test-helpers'
 
-import Button from '.'
+import Input from '.'
 
-describe('<Button />', () => {
+describe('<Input />', () => {
   test('should render correctly', async () => {
-    const { container } = renderAdapter(<Button>Simple button</Button>)
+    const { container } = renderAdapter(<Input placeholder="rendered" />)
 
     expect(container.firstChild).toMatchSnapshot()
   })

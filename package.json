@@ -13,14 +13,14 @@
   "scripts": {
     "build": "rollup -c",
     "commit": "git-cz",
+    "chromatic": "chromatic --exit-zero-on-changes",
     "lint": "eslint src --max-warnings=0",
     "lint:fix": "eslint src --fix",
     "prepare": "husky install",
     "release": "standard-version",
     "sb": "start-storybook -p 6006",
     "sb:build": "build-storybook",
-    "test": "jest src",
-    "chromatic": "chromatic --exit-zero-on-changes"
+    "test": "jest src"
   },
   "peerDependencies": {
     "react": "^17.0.1",
@@ -31,13 +31,11 @@
     "@commitlint/config-conventional": "^17.0.0",
     "@rollup/plugin-commonjs": "^22.0.0",
     "@rollup/plugin-node-resolve": "^13.3.0",
-    "@rollup/plugin-typescript": "^8.3.2",
     "@storybook/addon-actions": "^6.5.5",
     "@storybook/addon-essentials": "^6.5.5",
     "@storybook/addon-links": "^6.5.5",
     "@storybook/preset-scss": "^1.0.3",
     "@storybook/react": "^6.5.5",
-    "@swc/cli": "^0.1.57",
     "@swc/core": "^1.2.194",
     "@swc/jest": "^0.2.21",
     "@testing-library/jest-dom": "^5.16.4",
@@ -50,13 +48,13 @@
     "clsx": "^1.1.1",
     "commitizen": "^4.2.4",
     "css-loader": "5.2.6",
-    "cz-conventional-changelog": "3.3.0",
     "esbuild": "^0.14.40",
     "eslint": "^8.16.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-react": "^7.30.0",
     "eslint-plugin-react-hooks": "^4.5.0",
+    "git-cz": "^4.9.0",
     "husky": "^8.0.1",
     "jest": "^28.1.0",
     "jest-css-modules-transform": "^4.4.2",
@@ -68,7 +66,7 @@
     "react-dom": "^18.1.0",
     "rollup": "^2.75.0",
     "rollup-plugin-cleaner": "^1.0.0",
-    "rollup-plugin-esbuild-transform": "^1.4.0",
+    "rollup-plugin-esbuild": "^4.9.1",
     "rollup-plugin-generate-declarations": "^1.1.1",
     "rollup-plugin-peer-deps-external": "^2.2.4",
     "rollup-plugin-postcss": "^4.0.2",
@@ -85,7 +83,7 @@
   "dependencies": {},
   "config": {
     "commitizen": {
-      "path": "./node_modules/cz-conventional-changelog"
+      "path": "./node_modules/git-cz"
     }
   },
   "lint-staged": {

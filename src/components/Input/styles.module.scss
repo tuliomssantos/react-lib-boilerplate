@@ -1,0 +1,16 @@
+.input {
+  width: 100%;
+
+  &__standard {
+    background: rgba(255, 255, 255, 0.09);
+  }
+
+  &__outlined {
+    border: 1px solid gray;
+  }
+
+  &__filled {
+    border-bottom: 1px solid gray;
+  }
+
+}
